@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <title>To get client ip address in javascript or jquery?</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<span id="ip"></span>
+<div>Country: <span id="country"></span></div>
+    <div>State: <span id="state"></span></div>
+    <div>City: <span id="city"></span></div>
+    <div>Latitude: <span id="latitude"></span></div>
+    <div>Longitude: <span id="longitude"></span></div>
+    <div>IP: <span id="ipv4"></span></div>
+<script type="text/javascript">
+
+ 
+  $.ajax({
+  url: "https://geoip-db.com/jsonp",
+		jsonpCallback: "callback",
+		dataType: "jsonp",
+		success: function( location ) {
+			$('#country').html(location.country_name);
+			$('#state').html(location.state);
+			$('#city').html(location.city);
+			$('#latitude').html(location.latitude);
+			$('#longitude').html(location.longitude);
+			$('#ipv4').html(location.IPv4);  }
+			});
+		
+</script>
+
+</script>
+</body>
+</html>
